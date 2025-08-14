@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <title><!-- TODO: Nome da Clínica --> | Saúde com atenção humana</title>
+  <meta name="description" content="Atendimento médico humanizado, consultas presenciais e por telemedicina. Agende pelo WhatsApp em poucos cliques." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24'%3E%3Cpath fill='%2300a3a3' d='M12 2a7 7 0 0 0-7 7v3H4a2 2 0 0 0-2 2v6h20v-6a2 2 0 0 0-2-2h-1V9a7 7 0 0 0-7-7m0 2a5 5 0 0 1 5 5v3H7V9a5 5 0 0 1 5-5m0 9.5a3 3 0 0 1 3 3v.5H9v-.5a3 3 0 0 1 3-3Z'/%3E%3C/svg%3E" />
+  <meta property="og:title" content="<!-- TODO: Nome da Clínica -->" />
+  <meta property="og:description" content="Agende sua consulta pelo WhatsApp. Atendimento presencial e por telemedicina." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop" />
+  <meta name="theme-color" content="#00a3a3" />
+
+  <style>
+    :root{
+      --brand:#00a3a3;        /* teal médico */
+      --brand-2:#006b6b;      /* teal escuro */
+      --accent:#24c8c8;
+      --bg:#0b1721;           /* fundo hero escuro para contraste */
+      --text:#0b1f2a;
+      --muted:#5c7180;
+      --card:#ffffff;
+      --ok:#0f9d58;
+      --warn:#f39c12;
+      --error:#e74c3c;
+      --radius:14px;
+      --shadow:0 12px 30px rgba(0,0,0,.12);
+      --ring:0 0 0 3px rgba(0,163,163,.25);
+    }
+
+     </style>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- Topbar / Nav -->
+  <div class="topbar" role="navigation" aria-label="Barra de navegação principal">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <!-- Logo -->
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v6h2V5h14v4h2V5a2 2 0 0 0-2-2m1 7H4a2 2 0 0 0-2 2v9h8v-5h6v5h8v-9a2 2 0 0 0-2-2Z"/></svg>
+        <!-- TODO: Nome da Clínica -->
+        <span><!-- Clínica Vida Plena --></span>
+      </a>
+      <ul>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#medicos">Médicos</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#faq">Dúvidas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a class="btn cta" href="#agendar" aria-label="Agendar consulta pelo site">Agendar online</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container grid">
+      <div>
+        <span class="tag">Atendimento humanizado • Presencial & Telemedicina</span>
+        <h1><!-- TODO: Headline -->
+          Sua saúde em primeiro lugar — agende em <u>menos de 1 minuto</u>.
+        </h1>
+        <p>Consultas com especialistas, exames e acompanhamento contínuo. Aceitamos convênios e particulares.</p>
+        <div style="display:flex;gap:.6rem;margin-top:12px;flex-wrap:wrap">
+          <a class="btn" href="#agendar" aria-label="Agendar consulta online">
+            <!-- ícone calendário -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 15H5V10h14z"/></svg>
+            Agendar agora
+          </a>
+          <a class="btn ghost" href="https://wa.me/55<!-- TODO DDD e número -->?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20consulta" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp">
+            <!-- ícone whatsapp -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a10 10 0 0 0-8.66 15.07L2 22l5.12-1.34A10 10 0 1 0 12.04 2m5.74 14.55c-.24.68-1.4 1.3-1.96 1.38c-.5.08-1.13.12-1.82-.12c-.42-.14-.97-.31-1.67-.61a11.32 11.32 0 0 1-4.02-3.58a6.9 6.9 0 0 1-1.43-3.7a4 4 0 0 1 1.28-3.06c.35-.34.77-.5 1.01-.5h.73c.22 0 .55.04.84.64l.6 1.27c.1.25.16.54.04.76c-.13.27-.2.42-.4.65c-.2.23-.42.52-.6.7c-.19.19-.38.4-.17.77c.22.37.98 1.62 2.1 2.64c1.44 1.28 2.66 1.67 3.06 1.86c.39.19.62.17.85-.1c.23-.27.98-1.15 1.24-1.54c.26-.39.53-.33.89-.2l1.02.43c.33.14.82.37.96.59c.14.22.14.73-.1 1.41"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><strong>+8.500</strong><span>Pacientes atendidos</span></div>
+          <div class="kpi"><strong>4.9/5</strong><span>Avaliações</span></div>
+          <div class="kpi"><strong>24h</strong><span>Telemedicina</span></div>
+        </div>
+      </div>
+      <div class="hero-card" role="complementary" aria-label="Cartão de agendamento rápido">
+        <h2 style="margin:0 0 .4rem">Agendamento rápido</h2>
+        <p class="helper">Sem burocracia. Resposta em até 15 minutos no horário comercial.</p>
+        <form class="form" id="leadForm" novalidate>
+          <div class="row">
+            <div>
+              <label for="nome">Nome completo</label>
+              <input id="nome" name="nome" autocomplete="name" required placeholder="Ex: Maria Souza" />
+            </div>
+            <div>
+              <label for="telefone">Telefone/WhatsApp</label>
+              <input id="telefone" name="telefone" inputmode="tel" autocomplete="tel" placeholder="(DD) 9 XXXX-XXXX" required />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="especialidade">Especialidade</label>
+              <select id="especialidade" name="especialidade" required>
+                <option value="">Selecione</option>
+                <option>Clínico geral</option>
+                <option>Cardiologia</option>
+                <option>Ginecologia</option>
+                <option>Pediatria</option>
+                <option>Dermatologia</option>
+                <option>Ortopedia</option>
+                <option>Psicologia</option>
+                <option>Telemedicina</option>
+              </select>
+            </div>
+            <div>
+              <label for="preferencia">Preferência de horário</label>
+              <select id="preferencia" name="preferencia" required>
+                <option value="">Selecione</option>
+                <option>Manhã</option>
+                <option>Tarde</option>
+                <option>Noite</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="mensagem">Observações (opcional)</label>
+            <textarea id="mensagem" name="mensagem" rows="3" placeholder="Convênio, sintomas, urgência, retorno, etc."></textarea>
+          </div>
+          <div class="helper" id="formStatus" aria-live="polite"></div>
+          <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+            <button class="btn" type="submit">Enviar e falar no WhatsApp</button>
+            <button class="btn sec" type="button" id="ligacaoBtn">Prefiro ligação</button>
+          </div>
+          <small class="helper">Ao enviar, você concorda com nossa <a href="#privacidade">Política de Privacidade</a>.</small>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Provas sociais / Convênios -->
+    <section class="container" id="servicos" aria-labelledby="h-servicos">
+      <h2 id="h-servicos">Serviços e especialidades</h2>
+      <p class="helper">Estrutura completa para prevenção, diagnóstico e acompanhamento.</p>
+      <div class="cards" role="list">
+        <article class="card" role="listitem">
+          <h3>Consultas</h3>
+          <ul class="list-clean">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="m9 20l-5.5-5.5l1.4-1.4L9 17.2L19.1 7l1.4 1.4z"/></svg>
+              Clínico geral, Pediatria, Ginecologia, Dermatologia, Cardiologia.
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="m9 20l-5.5-5.5l1.4-1.4L9 17.2L19.1 7l1.4 1.4z"/></svg>
+              Telemedicina com receita digital.
+            </li>
+          </ul>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Exames</h3>
+          <ul class="list-clean">
+            <li><svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="m9 20l-5.5-5.5l1.4-1.4L9 17.2L19.1 7l1.4 1.4z"/></svg> Laboratoriais, ECG, MAPA, Holter.</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="m9 20l-5.5-5.5l1.4-1.4L9 17.2L19.1 7l1.4 1.4z"/></svg> Parcerias para imagem (USG, RX).</li>
+          </ul>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Planos e convênios</h3>
+          <p>Atendemos principais convênios e particular.</p>
+          <div class="pill" aria-label="Lista de convênios"><span>Unimed</span><span>Bradesco</span><span>AMIL</span><span>Particular</span></div>
+          <p class="note" style="margin-top:10px">Confirme cobertura e coparticipação no agendamento.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Médicos -->
+    <section class="container" id="medicos" aria-labelledby="h-medicos">
+      <div class="split">
+        <div>
+          <h2 id="h-medicos">Equipe médica</h2>
+          <p class="helper">Profissionais experientes e atualizados com as melhores práticas.</p>
+          <ul class="list-clean">
+            <li><strong><!-- TODO: Dr(a). Nome -->Dr. João Alves</strong> — CRM MG 000000 | Cardiologia</li>
+            <li><strong>Dr(a). Ana Lima</strong> — CRM MG 000000 | Clínica Geral</li>
+            <li><strong>Dr(a). Paula Rocha</strong> — CRM MG 000000 | Ginecologia</li>
+          </ul>
+          <div style="margin-top:10px">
+            <a class="btn" href="#agendar">Agendar com especialista</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=900&auto=format&fit=crop" alt="Médica sorrindo em consultório" style="width:100%;border-radius:12px" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Agendamento -->
+    <section class="container" id="agendar" aria-labelledby="h-agendar">
+      <div class="split">
+        <div class="card">
+          <h2 id="h-agendar">Agende sua consulta</h2>
+          <p>Preencha o formulário para ser atendido rapidamente pela nossa equipe.</p>
+          <form class="form" id="formAgendar" novalidate>
+            <div class="row">
+              <div>
+                <label for="nome2">Nome completo</label>
+                <input id="nome2" name="nome" required />
+              </div>
+              <div>
+                <label for="whats2">WhatsApp</label>
+                <input id="whats2" name="telefone" inputmode="tel" required placeholder="(DD) 9 XXXX-XXXX" />
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label for="servico2">Serviço</label>
+                <select id="servico2" required>
+                  <option value="">Selecione</option>
+                  <option>Consulta</option>
+                  <option>Exame</option>
+                  <option>Retorno</option>
+                  <option>Telemedicina</option>
+                </select>
+              </div>
+              <div>
+                <label for="dia2">Preferência de dia</label>
+                <input id="dia2" type="date" />
+              </div>
+            </div>
+            <div>
+              <label for="msg2">Mensagem</label>
+              <textarea id="msg2" rows="3" placeholder="Conte um pouco do que precisa"></textarea>
+            </div>
+            <div class="helper" id="status2" aria-live="polite"></div>
+            <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+              <button class="btn" type="submit">Enviar & WhatsApp</button>
+              <a class="btn ghost" target="_blank" rel="noopener" id="waDirect">Abrir WhatsApp direto</a>
+            </div>
+            <small class="helper">Também atendemos por telefone: <!-- TODO: telefone fixo --> (32) 0000-0000.</small>
+          </form>
+        </div>
+        <div>
+          <div class="card">
+            <h3>Endereço</h3>
+            <p><!-- TODO: Endereço da clínica --> Rua Exemplo, 123 — Centro, Tiradentes/MG</p>
+            <iframe title="Mapa da clínica" aria-label="Mapa da clínica" src="https://maps.google.com/maps?q=Tiradentes%20MG&t=m&z=15&output=embed&iwloc=near" width="100%" height="250" style="border:0;border-radius:12px"></iframe>
+          </div>
+          <div class="card" style="margin-top:14px">
+            <h3>Horários</h3>
+            <ul class="list-clean">
+              <li>Seg a Sex — 08:00 às 18:00</li>
+              <li>Sábado — 08:00 às 12:00</li>
+              <li><span class="ok">Telemedicina 24h</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planos -->
+    <section class="container" id="planos" aria-labelledby="h-planos">
+      <h2 id="h-planos">Planos</h2>
+      <div class="pricing">
+        <div class="price">
+          <h4>Consulta Particular</h4>
+          <div class="value">R$ 180</div>
+          <ul class="list-clean">
+            <li>Atendimento em até 48h</li>
+            <li>Retorno em 7 dias</li>
+          </ul>
+          <a class="btn" href="#agendar">Agendar</a>
+        </div>
+        <div class="price pop">
+          <h4>Check-up Essencial</h4>
+          <div class="value">R$ 490</div>
+          <ul class="list-clean">
+            <li>Consulta + exames básicos</li>
+            <li>Resultados em até 72h</li>
+          </ul>
+          <a class="btn" href="#agendar">Agendar</a>
+        </div>
+        <div class="price">
+          <h4>Empresas</h4>
+          <div class="value">Sob consulta</div>
+          <ul class="list-clean">
+            <li>PCMSO, exames admissionais</li>
+            <li>Atendimento in company</li>
+          </ul>
+          <a class="btn" href="#contato">Falar com Comercial</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="container" aria-labelledby="h-dep">
+      <h2 id="h-dep">O que nossos pacientes dizem</h2>
+      <div class="cards">
+        <div class="card"><p>“Atendimento excelente, equipe atenciosa!”</p><small>— Carla S.</small></div>
+        <div class="card"><p>“Agendei pelo WhatsApp e fui atendido no dia seguinte.”</p><small>— Lucas R.</small></div>
+        <div class="card"><p>“Telemedicina salvou meu plantão, super recomendo.”</p><small>— Mariana T.</small></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container" id="faq" aria-labelledby="h-faq">
+      <h2 id="h-faq">Dúvidas frequentes</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Quais convênios aceitam?</h3>
+          <p>Unimed, Amil, Bradesco, SulAmérica e particular. <a href="#agendar">Confirme seu plano</a>.</p>
+        </div>
+        <div class="card">
+          <h3>Emitimos receita digital?</h3>
+          <p>Sim, com assinatura eletrônica válida em todo o Brasil.</p>
+        </div>
+        <div class="card">
+          <h3>Como funciona a telemedicina?</h3>
+          <p>Consulta por videochamada segura. Documentos enviados por e-mail/WhatsApp.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="container" id="contato" aria-labelledby="h-contato">
+      <div class="split">
+        <div>
+          <h2 id="h-contato">Entre em contato</h2>
+          <p>Estamos prontos para ajudar. Resposta rápida no horário comercial.</p>
+          <ul class="list-clean">
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/55<!-- TODO -->">+55 (</a><!-- TODO: número --></li>
+            <li><strong>E-mail:</strong> <!-- TODO: email --> contato@seudominio.com.br</li>
+            <li><strong>Endereço:</strong> <!-- TODO: endereço --></li>
+            <li><strong>CNPJ:</strong> <!-- TODO: CNPJ --></li>
+          </ul>
+        </div>
+        <div class="card" id="privacidade">
+          <h3>Privacidade & LGPD</h3>
+          <p>Tratamos seus dados pessoais com base legal para prestação de serviços de saúde (art. 7º e 11 da LGPD). Saiba mais na nossa <a href="#">Política de Privacidade</a>.</p>
+          <p class="note">Você pode solicitar correção/eliminação dos dados a qualquer momento pelo e-mail acima.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container footgrid">
+      <div>
+        <h4><!-- TODO: Nome da Clínica --> Clínica Vida Plena</h4>
+        <p>Cuidado integral, tecnologia e acolhimento.</p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul class="list-clean">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#agendar">Agendar</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Redes</h4>
+        <ul class="list-clean">
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="Facebook">Facebook</a></li>
+          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright">
+      © <span id="year"></span> <!-- TODO: Nome da Clínica -->. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- Botões flutuantes WhatsApp / Ligar -->
+  <div class="whats-sticky" aria-label="Ações rápidas">
+    <a id="waFloat" class="btn" target="_blank" rel="noopener" href="https://wa.me/55<!-- TODO -->?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20consulta">
+      <!-- ícone -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a10 10 0 0 0-8.66 15.07L2 22l5.12-1.34A10 10 0 1 0 12.04 2m5.74 14.55c-.24.68-1.4 1.3-1.96 1.38c-.5.08-1.13.12-1.82-.12c-.42-.14-.97-.31-1.67-.61a11.32 11.32 0 0 1-4.02-3.58a6.9 6.9 0 0 1-1.43-3.7a4 4 0 0 1 1.28-3.06c.35-.34.77-.5 1.01-.5h.73c.22 0 .55.04.84.64l.6 1.27c.1.25.16.54.04.76c-.13.27-.2.42-.4.65c-.2.23-.42.52-.6.7c-.19.19-.38.4-.17.77c.22.37.98 1.62 2.1 2.64c1.44 1.28 2.66 1.67 3.06 1.86c.39.19.62.17.85-.1c.23-.27.98-1.15 1.24-1.54c.26-.39.53-.33.89-.2l1.02.43c.33.14.82.37.96.59c.14.22.14.73-.1 1.41"/></svg>
+      WhatsApp
+    </a>
+    <a class="btn ghost" href="tel:<!-- TODO: telefone -->" aria-label="Ligar para a clínica">
+      <!-- ícone telefone -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.05 15.05 0 0 0 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3c1 .3 2 .5 3 .5c.7 0 1.4.6 1.4 1.3V21c0 .7-.7 1.4-1.4 1.4C9.6 22.4 1.6 14.4 1.6 4.4C1.6 3.7 2.3 3 3 3h3.3c.7 0 1.3.7 1.3 1.4c0 1 .2 2 .5 3c.1.4 0 .9-.3 1.2z"/></svg>
+      Ligar
+    </a>
+  </div>
+
+  <!-- Cookie consent (LGPD) -->
+  <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Consentimento de cookies" hidden>
+    <small>Usamos cookies essenciais e de medição anônima para melhorar sua experiência. <a href="#privacidade">Saiba mais</a>.</small>
+    <div style="display:flex;gap:.4rem">
+      <button class="btn ghost" id="recusar">Recusar</button>
+      <button class="btn" id="aceitar">Aceitar</button>
+    </div>
+  </div>
+
+  <!-- JSON-LD: dados estruturados da clínica -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "FEK Clínica Médica",
+  "url": "https://fekclinicamedica.com",
+  "logo": "https://seusite.com/logo.png",
+  "telephone": "+55 32 99999-9999",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Exemplo, 123",
+    "addressLocality": "Tiradentes",
+    "addressRegion": "MG",
+    "postalCode": "36325-000",
+    "addressCountry": "BR"
+  },
+  "openingHours": ["Mo-Fr 08:00-18:00", "Sa 08:00-12:00"],
+  "medicalSpecialty": ["PrimaryCare", "Cardiovascular", "Dermatology", "Pediatrics"],
+  "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop",
+  "sameAs": ["https://instagram.com/fekclinicamedica"]
+}
+</script>
+
+  <script>
+    // Utilidades
+    const $ = (s, root=document) => root.querySelector(s);
+    const encode = s => encodeURIComponent(s || '').trim();
+
+    // Ano dinâmico
+    $('#year').textContent = new Date().getFullYear();
+
+    // Cookie consent (LGPD)
+    (function(){
+      const key='lgpd_consent_v1';
+      const box = $('#cookie');
+      if(!localStorage.getItem(key)){ box.hidden=false; }
+      $('#aceitar').addEventListener('click',()=>{ localStorage.setItem(key,'accepted'); box.hidden=true; });
+      $('#recusar').addEventListener('click',()=>{ localStorage.setItem(key,'denied'); box.hidden=true; });
+    })();
+
+    // Máscara simples de telefone (BR)
+    function maskPhone(input){
+      let v=input.value.replace(/\D/g,'');
+      if(v.length>11) v=v.slice(0,11);
+      if(v.length>0) v='('+v.slice(0,2)+') '+v.slice(2);
+      if(v.length>10) v=v.slice(0,10)+'-'+v.slice(10);
+      input.value=v;
+    }
+    ['telefone','whats2'].forEach(id=>{
+      const el=$('#'+id);
+      if(el) el.addEventListener('input',()=>maskPhone(el));
+    });
+
+    // Helper: montar link WhatsApp com mensagem padronizada
+    function buildWA(params){
+      const numero = '55<!-- TODO:DDD e número, somente dígitos -->';
+      const msg = `Olá, gostaria de agendar uma consulta.%0A`+
+                  `Nome: ${encode(params.nome)}%0A`+
+                  `Telefone: ${encode(params.telefone)}%0A`+
+                  `Serviço: ${encode(params.servico||params.especialidade)}%0A`+
+                  `Preferência: ${encode(params.preferencia||params.dia||'Indiferente')}`+
+                  (params.mensagem?`%0AObs: ${encode(params.mensagem)}`:'');
+      return `https://wa.me/${numero}?text=${msg}`;
+    }
+
+    // Lead rápido (hero)
+    $('#leadForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = {
+        nome: $('#nome').value,
+        telefone: $('#telefone').value,
+        especialidade: $('#especialidade').value,
+        preferencia: $('#preferencia').value,
+        mensagem: $('#mensagem').value
+      };
+      if(!data.nome || !data.telefone || !data.especialidade || !data.preferencia){
+        $('#formStatus').textContent='Preencha os campos obrigatórios.';
+        $('#formStatus').className='helper err';
+        return;
+      }
+      const url = buildWA(data);
+      $('#formStatus').textContent='Abrindo WhatsApp…';
+      $('#formStatus').className='helper ok';
+      window.open(url,'_blank','noopener');
+    });
+
+    $('#ligacaoBtn').addEventListener('click', ()=>{
+      window.location.href='tel:<!-- TODO: telefone -->';
+    });
+
+    // Agendar (seção)
+    $('#formAgendar').addEventListener('submit',(e)=>{
+      e.preventDefault();
+      const data = {
+        nome: $('#nome2').value,
+        telefone: $('#whats2').value,
+        servico: $('#servico2').value,
+        dia: $('#dia2').value,
+        mensagem: $('#msg2').value
+      };
+      if(!data.nome || !data.telefone || !data.servico){
+        $('#status2').textContent='Por favor, preencha Nome, WhatsApp e Serviço.';
+        $('#status2').className='helper err';
+        return;
+      }
+      const url = buildWA(data);
+      $('#status2').textContent='Abrindo WhatsApp…';
+      $('#status2').className='helper ok';
+      window.open(url,'_blank','noopener');
+    });
+
+    // Botão wa direto
+    $('#waDirect').addEventListener('click',(e)=>{
+      const link = buildWA({servico:'Consulta'});
+      e.currentTarget.href = link;
+    });
+
+    // Acessibilidade: fechar foco no cookie com ESC
+    document.addEventListener('keydown', (e)=>{
+      if(e.key==='Escape'){ const c=$('#cookie'); if(c && !c.hidden) c.hidden=true; }
+    });
+  </script>
+</body>
+</html>
