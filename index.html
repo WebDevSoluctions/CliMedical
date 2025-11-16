@@ -35,13 +35,13 @@
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
 
-  <!-- Topbar / Nav -->
+  
   <div class="topbar" role="navigation" aria-label="Barra de navegação principal">
     <div class="container nav">
       <a class="brand" href="#">
-        <!-- Logo -->
+       
         <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v6h2V5h14v4h2V5a2 2 0 0 0-2-2m1 7H4a2 2 0 0 0-2 2v9h8v-5h6v5h8v-9a2 2 0 0 0-2-2Z"/></svg>
-        <!-- TODO: Nome da Clínica -->
+        
         <span><!-- Clínica Vida Plena --></span>
       </a>
       <ul>
@@ -55,7 +55,7 @@
     </div>
   </div>
 
-  <!-- Hero -->
+  
   <header class="hero">
     <div class="container grid">
       <div>
@@ -137,7 +137,7 @@
   </header>
 
   <main id="conteudo">
-    <!-- Provas sociais / Convênios -->
+   
     <section class="container" id="servicos" aria-labelledby="h-servicos">
       <h2 id="h-servicos">Serviços e especialidades</h2>
       <p class="helper">Estrutura completa para prevenção, diagnóstico e acompanhamento.</p>
@@ -171,7 +171,7 @@
       </div>
     </section>
 
-    <!-- Médicos -->
+   
     <section class="container" id="medicos" aria-labelledby="h-medicos">
       <div class="split">
         <div>
@@ -192,7 +192,7 @@
       </div>
     </section>
 
-    <!-- Agendamento -->
+   
     <section class="container" id="agendar" aria-labelledby="h-agendar">
       <div class="split">
         <div class="card">
@@ -255,7 +255,7 @@
       </div>
     </section>
 
-    <!-- Planos -->
+    
     <section class="container" id="planos" aria-labelledby="h-planos">
       <h2 id="h-planos">Planos</h2>
       <div class="pricing">
@@ -289,7 +289,7 @@
       </div>
     </section>
 
-    <!-- Depoimentos -->
+    
     <section class="container" aria-labelledby="h-dep">
       <h2 id="h-dep">O que nossos pacientes dizem</h2>
       <div class="cards">
@@ -299,7 +299,7 @@
       </div>
     </section>
 
-    <!-- FAQ -->
+    
     <section class="container" id="faq" aria-labelledby="h-faq">
       <h2 id="h-faq">Dúvidas frequentes</h2>
       <div class="cards">
@@ -318,7 +318,7 @@
       </div>
     </section>
 
-    <!-- Contato -->
+   
     <section class="container" id="contato" aria-labelledby="h-contato">
       <div class="split">
         <div>
@@ -340,7 +340,7 @@
     </section>
   </main>
 
-  <!-- Footer -->
+ 
   <footer role="contentinfo">
     <div class="container footgrid">
       <div>
@@ -369,7 +369,7 @@
     </div>
   </footer>
 
-  <!-- Botões flutuantes WhatsApp / Ligar -->
+  
   <div class="whats-sticky" aria-label="Ações rápidas">
     <a id="waFloat" class="btn" target="_blank" rel="noopener" href="https://wa.me/55<!-- TODO -->?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20consulta">
       <!-- ícone -->
@@ -383,7 +383,7 @@
     </a>
   </div>
 
-  <!-- Cookie consent (LGPD) -->
+  
   <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Consentimento de cookies" hidden>
     <small>Usamos cookies essenciais e de medição anônima para melhorar sua experiência. <a href="#privacidade">Saiba mais</a>.</small>
     <div style="display:flex;gap:.4rem">
@@ -392,7 +392,7 @@
     </div>
   </div>
 
-  <!-- JSON-LD: dados estruturados da clínica -->
+  
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -421,10 +421,10 @@
     const $ = (s, root=document) => root.querySelector(s);
     const encode = s => encodeURIComponent(s || '').trim();
 
-    // Ano dinâmico
+    
     $('#year').textContent = new Date().getFullYear();
 
-    // Cookie consent (LGPD)
+   
     (function(){
       const key='lgpd_consent_v1';
       const box = $('#cookie');
@@ -433,7 +433,7 @@
       $('#recusar').addEventListener('click',()=>{ localStorage.setItem(key,'denied'); box.hidden=true; });
     })();
 
-    // Máscara simples de telefone (BR)
+   
     function maskPhone(input){
       let v=input.value.replace(/\D/g,'');
       if(v.length>11) v=v.slice(0,11);
@@ -446,7 +446,7 @@
       if(el) el.addEventListener('input',()=>maskPhone(el));
     });
 
-    // Helper: montar link WhatsApp com mensagem padronizada
+    
     function buildWA(params){
       const numero = '55<!-- TODO:DDD e número, somente dígitos -->';
       const msg = `Olá, gostaria de agendar uma consulta.%0A`+
@@ -458,7 +458,7 @@
       return `https://wa.me/${numero}?text=${msg}`;
     }
 
-    // Lead rápido (hero)
+    
     $('#leadForm').addEventListener('submit', (e)=>{
       e.preventDefault();
       const data = {
@@ -483,7 +483,7 @@
       window.location.href='tel:<!-- TODO: telefone -->';
     });
 
-    // Agendar (seção)
+   
     $('#formAgendar').addEventListener('submit',(e)=>{
       e.preventDefault();
       const data = {
@@ -504,16 +504,17 @@
       window.open(url,'_blank','noopener');
     });
 
-    // Botão wa direto
+    
     $('#waDirect').addEventListener('click',(e)=>{
       const link = buildWA({servico:'Consulta'});
       e.currentTarget.href = link;
     });
 
-    // Acessibilidade: fechar foco no cookie com ESC
+    
     document.addEventListener('keydown', (e)=>{
       if(e.key==='Escape'){ const c=$('#cookie'); if(c && !c.hidden) c.hidden=true; }
     });
   </script>
 </body>
+
 </html>
